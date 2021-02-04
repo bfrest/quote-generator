@@ -58,11 +58,20 @@
   <script>
     const textElement = document.querySelector(".text");
     const authorElement = document.querySelector(".author");
+    const quoteWrapper = document.querySelector(".quoteWrap");
 
-    window.addEventListener("load", () => {
+    const getRandomQuote = () => {
       randomNum = Math.floor(Math.random() * 1774);
       textElement.innerHTML = `${quotes[randomNum].text}`;
       authorElement.innerHTML = `- ${quotes[randomNum].author}`;
+    };
+
+    window.addEventListener("load", () => {
+      getRandomQuote();
+    });
+
+    quoteWrapper.addEventListener("click", () => {
+      getRandomQuote();
     });
   </script>
 </html>
