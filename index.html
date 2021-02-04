@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Quotes</title>
+  </head>
+
+  <style>
+    body {
+      display: flex;
+      font-size: 10px;
+      flex-direction: column;
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #000;
+      background-image: url("./images/zenowebp.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-y: bottom;
+      background-position-x: right;
+      margin-top: -80px;
+    }
+
+    .quoteWrap {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      width: 60%;
+    }
+
+    .author {
+      font-weight: 600;
+    }
+
+    @media (min-width: 700px) {
+      body {
+        background-image: url("./images/EkezBfF.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="quoteWrap">
+      <p class="text"></p>
+      <p class="author"></p>
+    </div>
+  </body>
+  <script type="text/javascript" src="./stoic.js"></script>
+  <script>
+    const textElement = document.querySelector(".text");
+    const authorElement = document.querySelector(".author");
+
+    window.addEventListener("load", () => {
+      randomNum = Math.floor(Math.random() * 1774);
+      textElement.innerHTML = `${quotes[randomNum].text}`;
+      authorElement.innerHTML = `- ${quotes[randomNum].author}`;
+    });
+  </script>
+</html>
